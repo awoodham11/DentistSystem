@@ -1,0 +1,39 @@
+﻿@page "/dentistapp"
+@using System.Text.Json;
+
+<h3>DentistApp</h3>
+
+@foreach(var dentist in dentists)
+{
+	<p>
+		<b>*@dentist.name</b>
+	</p>
+}
+
+
+@code {
+	public class Dentists
+	{
+		public int id { get; set; }
+		public string? name { get; set; }
+	}
+
+	string API_URL = "http://localhost:5070/";
+
+	private IEnumerable<Dentists> dentists = Array.Empty<Dentists>();
+
+	private async Task refreshList()
+	{
+		HttpClient httpClient = new HttpClient();
+		HttpResponseMessage response = await httpClient.GetAsync(API_URL + "api/DentistApp/GetDentists"); 
+		httpClient.Dispose();
+		var responseStream = await response.Content.ReadAsStreamAsync();
+		dentists = await JsonSerializer.DeserializeAsync<IEnumerable<Dentists>>(responseStream);
+	}
+
+
+	protected override async Task OnInitializedAsync()
+	{
+		await this.refreshList();
+	}
+}

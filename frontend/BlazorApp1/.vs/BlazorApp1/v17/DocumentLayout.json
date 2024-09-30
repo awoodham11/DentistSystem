@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\patient.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\patient.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\dentistapp.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\dentistapp.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Patient.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\Patient.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\Patient.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\Patient.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\Patient.razor",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T21:22:42.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Shared\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "BlazorApp1\\Shared\\NavMenu.razor",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T18:37:03.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DentistApp.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\DentistApp.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\DentistApp.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\DentistApp.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\DentistApp.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T18:36:18.045Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

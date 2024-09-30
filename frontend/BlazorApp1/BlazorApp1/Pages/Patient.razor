@@ -1,0 +1,39 @@
+﻿@page "/patients"
+@using System.Text.Json;
+
+<h3>Patients</h3>
+
+@foreach (var patient in patient)
+{
+	<p>
+		<b>*@patient.name</b>
+	</p>
+}
+
+
+@code {
+	public class Patients
+	{
+		public int id { get; set; }
+		public string? name { get; set; }
+	}
+
+	string API_URL = "http://localhost:5070/";
+
+	private IEnumerable<Patients> patient = Array.Empty<Patients>();
+
+	private async Task refreshList()
+	{
+		HttpClient httpClient = new HttpClient();
+		HttpResponseMessage response = await httpClient.GetAsync(API_URL + "api/Patient/GetPatients");
+		httpClient.Dispose();
+		var responseStream = await response.Content.ReadAsStreamAsync();
+		patient = await JsonSerializer.DeserializeAsync<IEnumerable<Patients>>(responseStream);
+	}
+
+
+	protected override async Task OnInitializedAsync()
+	{
+		await this.refreshList();
+	}
+}
