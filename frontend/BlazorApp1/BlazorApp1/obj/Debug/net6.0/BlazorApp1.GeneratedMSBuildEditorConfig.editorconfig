@@ -26,12 +26,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVudGlzdEFwcC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/alexw/DentistSystem/frontend/BlazorApp1/BlazorApp1/Pages/DentistPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVudGlzdFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alexw/DentistSystem/frontend/BlazorApp1/BlazorApp1/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alexw/DentistSystem/frontend/BlazorApp1/BlazorApp1/Pages/Patient.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF0aWVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexw/DentistSystem/frontend/BlazorApp1/BlazorApp1/Pages/PatientPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF0aWVudFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexw/DentistSystem/frontend/BlazorApp1/BlazorApp1/Pages/PracticeManager.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJhY3RpY2VNYW5hZ2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alexw/DentistSystem/frontend/BlazorApp1/BlazorApp1/Pages/ReceptionistPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVjZXB0aW9uaXN0UGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alexw/DentistSystem/frontend/BlazorApp1/BlazorApp1/Shared/SurveyPrompt.razor]
