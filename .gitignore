@@ -1,0 +1,22 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore the Blazor app's publish folder
+publish/
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+
+# Ignore IDE config files
+.idea/
+.vscode/
