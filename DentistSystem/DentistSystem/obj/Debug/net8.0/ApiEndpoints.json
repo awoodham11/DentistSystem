@@ -42,6 +42,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DentistSystem.Controllers.ManagerController",
+    "Method": "GetManagers",
+    "RelativePath": "api/Manager/GetManagers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DentistSystem.Controllers.PatientController",
     "Method": "GetPatients",
     "RelativePath": "api/Patient/GetPatients",

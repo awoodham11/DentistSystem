@@ -82,3 +82,4 @@ C:\Users\alexw\DentistSystem\backend\backend\bin\Debug\net8.0\DentistSystem.runt
 C:\Users\alexw\DentistSystem\backend\backend\bin\Debug\net8.0\DentistSystem.pdb
 C:\Users\alexw\DentistSystem\backend\backend\obj\Debug\net8.0\DentistSystem.genruntimeconfig.cache
 C:\Users\alexw\DentistSystem\backend\backend\obj\Debug\net8.0\ref\DentistSystem.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\obj\Debug\net8.0\DentistSystem.sourcelink.json
