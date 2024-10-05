@@ -23,7 +23,7 @@ namespace DentistSystem.Controllers
         [Route("GetDentists")]
         public JsonResult GetDentists()
         {
-            string query = "select * from dbo.dentists";
+            string query = "select * from dbo.dentist";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
             SqlDataReader myReader;
@@ -45,7 +45,7 @@ namespace DentistSystem.Controllers
         [Route("AddDentists")]
         public JsonResult AddDentists([FromForm] string newDentists)
         {
-            string query = "insert into dbo.dentists values(@newDentists)";
+            string query = "insert into dbo.dentist values(@newDentists)";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
             SqlDataReader myReader;
@@ -70,7 +70,7 @@ namespace DentistSystem.Controllers
         [Route("DeleteDentists")]
         public JsonResult DeleteDentists(int id)
         {
-            string query = "delete from dbo.dentists where id=@id";
+            string query = "delete from dbo.dentist where id=@id";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
             SqlDataReader myReader;

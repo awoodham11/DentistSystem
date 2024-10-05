@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|c:\\users\\alexw\\dentistsystem\\dentistsystem\\dentistsystem\\controllers\\actualpatientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|solutionrelative:dentistsystem\\controllers\\actualpatientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|c:\\users\\alexw\\dentistsystem\\dentistsystem\\dentistsystem\\controllers\\receptionistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|solutionrelative:dentistsystem\\controllers\\receptionistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|c:\\users\\alexw\\dentistsystem\\dentistsystem\\dentistsystem\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|solutionrelative:dentistsystem\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|c:\\users\\alexw\\dentistsystem\\dentistsystem\\dentistsystem\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|solutionrelative:dentistsystem\\controllers\\managercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|c:\\users\\alexw\\dentistsystem\\dentistsystem\\dentistsystem\\controllers\\actualpatientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B672644-4F39-4D63-93A3-64D483A4DAAF}|DentistSystem\\DentistSystem.csproj|solutionrelative:dentistsystem\\controllers\\actualpatientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +26,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "DentistSystem\\Controllers\\PatientController.cs",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "DentistSystem\\Controllers\\PatientController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T20:18:12.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ReceptionistController.cs",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\Controllers\\ReceptionistController.cs",
+              "RelativeDocumentMoniker": "DentistSystem\\Controllers\\ReceptionistController.cs",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\Controllers\\ReceptionistController.cs*",
+              "RelativeToolTip": "DentistSystem\\Controllers\\ReceptionistController.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwBgAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T20:20:36.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ActualPatientController.cs",
               "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\Controllers\\ActualPatientController.cs",
               "RelativeDocumentMoniker": "DentistSystem\\Controllers\\ActualPatientController.cs",
               "ToolTip": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\Controllers\\ActualPatientController.cs",
               "RelativeToolTip": "DentistSystem\\Controllers\\ActualPatientController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAUwBIAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T17:45:39.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ManagerController.cs",
               "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\Controllers\\ManagerController.cs",
               "RelativeDocumentMoniker": "DentistSystem\\Controllers\\ManagerController.cs",

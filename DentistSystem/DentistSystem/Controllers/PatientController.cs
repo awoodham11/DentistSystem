@@ -20,7 +20,7 @@ namespace DentistSystem.Controllers
 		[Route("GetPatients")]
 		public JsonResult GetPatients()
 		{
-			string query = "select * from dbo.patients";
+			string query = "select * from dbo.patient";
 			DataTable table = new DataTable();
 			string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
 			SqlDataReader myReader;

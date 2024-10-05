@@ -1,3 +1,4 @@
+using BlazorApp1.Identity;
 using BlazorApp1.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
@@ -10,6 +11,10 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<AuthService>(options =>
+{
+    options.BaseAddress = new Uri("http://localhost:5070/api/v1/");
+});
 
 var app = builder.Build();
 

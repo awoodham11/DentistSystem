@@ -1,13 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "PfkxKsOOrBc=",
+  "dgSpecHash": "Yd9CaEDqB0A=",
   "success": true,
   "projectFilePath": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.8\\microsoft.aspnetcore.jsonpatch.8.0.8.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.8\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.8.nupkg.sha512",
+    "C:\\Users\\alexw\\.nuget\\packages\\microsoft.bcl.timeprovider\\8.0.1\\microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\alexw\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.1.1\\microsoft.identitymodel.abstractions.8.1.1.nupkg.sha512",
+    "C:\\Users\\alexw\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.1.1\\microsoft.identitymodel.jsonwebtokens.8.1.1.nupkg.sha512",
+    "C:\\Users\\alexw\\.nuget\\packages\\microsoft.identitymodel.logging\\8.1.1\\microsoft.identitymodel.logging.8.1.1.nupkg.sha512",
+    "C:\\Users\\alexw\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.1.1\\microsoft.identitymodel.tokens.8.1.1.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -22,6 +27,7 @@
     "C:\\Users\\alexw\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\system.data.sqlclient\\4.8.6\\system.data.sqlclient.4.8.6.nupkg.sha512",
+    "C:\\Users\\alexw\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.1.1\\system.identitymodel.tokens.jwt.8.1.1.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],

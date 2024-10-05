@@ -62,6 +62,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DentistSystem.Controllers.ReceptionistController",
+    "Method": "GetReceptionists",
+    "RelativePath": "api/Receptionist/GetReceptionists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DentistSystem.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
