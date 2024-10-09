@@ -5,9 +5,8 @@
 
 @foreach(var dentist in dentists)
 {
-	<p>
-		<b>*@dentist.name</b>
-	</p>
+	<p>@dentist.first_name @dentist.last_name</p>
+	
 }
 
 
@@ -15,7 +14,9 @@
 	public class Dentists
 	{
 		public int id { get; set; }
-		public string? name { get; set; }
+		public string? first_name { get; set; }
+		public string? last_name { get; set; }
+
 	}
 
 	string API_URL = "http://localhost:5070/";

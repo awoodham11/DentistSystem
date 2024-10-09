@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\alexw\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgIntersoft_Crosslight Condition=" '$(PkgIntersoft_Crosslight)' == '' ">C:\Users\alexw\.nuget\packages\intersoft.crosslight\6.0.5000.975</PkgIntersoft_Crosslight>
+  </PropertyGroup>
 </Project>

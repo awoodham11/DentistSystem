@@ -50,6 +50,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Blazored.SessionStorage": {
               "target": "Package",
               "version": "[2.4.0, )"
@@ -57,6 +61,14 @@
             "Docker.DotNet": {
               "target": "Package",
               "version": "[3.125.15, )"
+            },
+            "Intersoft.Crosslight": {
+              "target": "Package",
+              "version": "[6.0.5000.975, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

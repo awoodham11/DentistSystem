@@ -2,6 +2,8 @@ using BlazorApp1.Identity;
 using BlazorApp1.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +12,51 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
+builder.Services.AddAuthorizationCore();
+
 builder.Services.AddHttpClient();
-builder.Services.AddHttpClient<AuthService>(options =>
+builder.Services.AddBlazoredLocalStorage();
+
+builder.Services.AddCors(options =>
 {
-    options.BaseAddress = new Uri("http://localhost:5070/api/v1/");
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
 });
+
+
+
+
+
+
+if (builder.Environment.IsDevelopment())
+{
+	var handler = new HttpClientHandler
+	{
+		ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+	};
+	builder.Services.AddHttpClient("MyClient", client =>
+	{
+		client.BaseAddress = new Uri("https://localhost:5070");
+	}).ConfigurePrimaryHttpMessageHandler(() => handler);
+}
+else
+{
+	builder.Services.AddHttpClient("MyClient", client =>
+	{
+		client.BaseAddress = new Uri("https://localhost:5070");
+	});
+}
+
+
+
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -24,6 +66,10 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
 }
 
+app.UseHttpsRedirection();
+app.UseCors();
+app.UseAuthorization();
+app.MapControllers();
 
 app.UseStaticFiles();
 

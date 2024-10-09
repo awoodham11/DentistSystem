@@ -1,0 +1,10 @@
+﻿  @* <button @onclick="Logout1">Logout</button>
+
+  @code {
+      private async Task Logout1()
+      {
+          await LocalStorage.RemoveItemAsync("authToken");
+          ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsLoggedOut();
+          Navigation.NavigateTo("/login");
+      }
+  } *@

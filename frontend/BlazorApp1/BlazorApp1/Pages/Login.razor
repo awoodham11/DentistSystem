@@ -1,7 +1,9 @@
-﻿@* @page "/login"
+﻿@page "/login"
 
-@inject NavigationManager Navigation
 @inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
     <DataAnnotationsValidator />
@@ -33,12 +35,26 @@
     {
         try
         {
+            // Make a POST request to your API to get the JWT token
             var response = await Http.PostAsJsonAsync("https://localhost:5070/api/auth/login", loginModel);
 
             if (response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
-                // You can store the token in local storage or session storage
+                // Store the JWT token in local storage or session storage
+                await LocalStorage.SetItemAsync("authToken", result.Token);
+
+                // Safely cast the AuthenticationStateProvider to your custom provider
+                if (AuthenticationStateProvider is CustomAuthenticationStateProvider customAuthStateProvider)
+                {
+                    // Notify the authentication state provider that the user has logged in
+                    customAuthStateProvider.MarkUserAsAuthenticated(result.Token);
+                }
+                else
+                {
+                    errorMessage = "Error: Authentication provider is not the expected type.";
+                }
+                // Navigate to the homepage or some protected page
                 Navigation.NavigateTo("/");
             }
             else
@@ -63,4 +79,4 @@
         public string Token { get; set; }
     }
 }
- *@
+

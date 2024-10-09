@@ -83,3 +83,12 @@ C:\Users\alexw\DentistSystem\backend\backend\bin\Debug\net8.0\DentistSystem.pdb
 C:\Users\alexw\DentistSystem\backend\backend\obj\Debug\net8.0\DentistSystem.genruntimeconfig.cache
 C:\Users\alexw\DentistSystem\backend\backend\obj\Debug\net8.0\ref\DentistSystem.dll
 C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\obj\Debug\net8.0\DentistSystem.sourcelink.json
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\alexw\DentistSystem\DentistSystem\DentistSystem\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

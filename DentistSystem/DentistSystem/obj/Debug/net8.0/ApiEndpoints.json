@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "DentistSystem.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DentistSystem.Controllers.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DentistSystem.Controllers.DentistAppController",
     "Method": "AddDentists",
     "RelativePath": "api/DentistApp/AddDentists",
