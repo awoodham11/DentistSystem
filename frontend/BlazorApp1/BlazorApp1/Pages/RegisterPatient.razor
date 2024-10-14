@@ -1,0 +1,90 @@
+﻿@page "/register-patient"
+@using System.Net.Http.Json
+@using BlazorApp1.Models
+@inject HttpClient Http
+
+<h3>Register as a New Patient</h3>
+
+<EditForm Model="newPatient" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <InputText id="FirstName" class="form-control" @bind-Value="@newPatient.FirstName" />
+    </div>
+
+    <div class="form-group">
+        <label for="LastName">Last Name</label>
+        <InputText id="LastName" class="form-control" @bind-Value="@newPatient.LastName" />
+    </div>
+
+    <div class="form-group">
+        <label for="Dob">Date of Birth</label>
+        <InputText id="Dob" class="form-control" @bind-Value="@newPatient.Dob" />
+    </div>
+
+    <div class="form-group">
+        <label for="PatientAddress">Address</label>
+        <InputText id="PatientAddress" class="form-control" @bind-Value="@newPatient.PatientAddress" />
+    </div>
+
+    <div class="form-group">
+        <label for="ContactNumber">Contact Number</label>
+        <InputText id="ContactNumber" class="form-control" @bind-Value="@newPatient.ContactNumber" />
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <InputText id="Email" class="form-control" @bind-Value="@newPatient.Email" />
+    </div>
+
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <InputText id="Password" type="password" class="form-control" @bind-Value="@newPatient.Password" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</EditForm>
+
+@if (message != null)
+{
+    <p>@message</p>
+}
+
+@code {
+    public PatientModel newPatient = new PatientModel();
+    private string message;
+
+    private async Task HandleSubmit()
+    {
+        try
+        {
+            var formData = new MultipartFormDataContent
+            {
+                { new StringContent(newPatient.FirstName), "FirstName" },
+                { new StringContent(newPatient.LastName), "LastName" },
+                { new StringContent(newPatient.Dob), "Dob" },
+                { new StringContent(newPatient.PatientAddress), "PatientAddress" },
+                { new StringContent(newPatient.ContactNumber), "ContactNumber" },
+                { new StringContent(newPatient.Email), "Email" },
+                { new StringContent(newPatient.Password), "Password" }
+            };
+
+            var response = await Http.PostAsync("https://localhost:5070/api/Patient/RegisterPatient", formData);
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = "Registration successful!";
+            }
+            else
+            {
+                message = "Failed to register. Please try again.";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+}

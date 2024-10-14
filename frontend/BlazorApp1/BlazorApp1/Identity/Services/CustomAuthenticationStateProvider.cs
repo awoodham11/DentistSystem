@@ -8,7 +8,7 @@ using ILocalStorageService = Blazored.LocalStorage.ILocalStorageService;
 
 public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 {
-    private readonly Blazored.LocalStorage.ILocalStorageService _localStorage;
+    private readonly ILocalStorageService _localStorage;
     private readonly HttpClient _httpClient;
 
     public CustomAuthenticationStateProvider(ILocalStorageService localStorage, HttpClient httpClient)
@@ -19,8 +19,7 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 
     public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
-        var token = await _localStorage.GetItemAsync<string>("12345");
-
+        var token = await _localStorage.GetItemAsync<string>("authToken");
         if (string.IsNullOrWhiteSpace(token))
         {
             // No token means the user is not authenticated
@@ -51,7 +50,7 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     public void MarkUserAsLoggedOut()
     {
         // Clear the authorization header
-        _httpClient.DefaultRequestHeaders.Authorization = null;
+        //_httpClient.DefaultRequestHeaders.Authorization = null;
 
         var anonymous = new ClaimsPrincipal(new ClaimsIdentity());
         NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(anonymous)));

@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="Blazored.SessionStorage" Version="2.4.0" />
+    <PackageReference Include="Bogus" Version="35.6.1" />
     <PackageReference Include="Docker.DotNet" Version="3.125.15" />
     <PackageReference Include="Intersoft.Crosslight" Version="6.0.5000.975" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />

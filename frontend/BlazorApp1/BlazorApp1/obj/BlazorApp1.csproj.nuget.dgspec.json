@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[2.4.0, )"
             },
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.1, )"
+            },
             "Docker.DotNet": {
               "target": "Package",
               "version": "[3.125.15, )"

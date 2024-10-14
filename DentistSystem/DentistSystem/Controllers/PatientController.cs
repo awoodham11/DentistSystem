@@ -80,7 +80,7 @@ namespace DentistSystem.Controllers
 	{
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
-		public Date Dob { get; set; }
+		public string Dob { get; set; }
 		public string PatientAddress { get; set; }
 		public string ContactNumber { get; set; }
 		public string Email { get; set; }

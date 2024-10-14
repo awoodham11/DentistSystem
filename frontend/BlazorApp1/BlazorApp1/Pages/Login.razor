@@ -10,13 +10,13 @@
     <ValidationSummary />
 
     <div>
-        <label>Username:</label>
-        <InputText @bind-Value="loginModel.Username" />
+        <label>Username (Email):</label>
+        <InputText @bind-Value="@loginModel.Username" />
     </div>
 
     <div>
         <label>Password:</label>
-        <InputText @bind-Value="loginModel.Password" Type="password" />
+        <InputText @bind-Value="@loginModel.Password" Type="password" />
     </div>
 
     <button type="submit">Login</button>

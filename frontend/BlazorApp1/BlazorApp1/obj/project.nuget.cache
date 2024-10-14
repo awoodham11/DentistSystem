@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "uz35bMq+70g=",
+  "dgSpecHash": "O2x2pNWgNvk=",
   "success": true,
   "projectFilePath": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexw\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\blazored.sessionstorage\\2.4.0\\blazored.sessionstorage.2.4.0.nupkg.sha512",
+    "C:\\Users\\alexw\\.nuget\\packages\\bogus\\35.6.1\\bogus.35.6.1.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\docker.dotnet\\3.125.15\\docker.dotnet.3.125.15.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\intersoft.crosslight\\6.0.5000.975\\intersoft.crosslight.6.0.5000.975.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",

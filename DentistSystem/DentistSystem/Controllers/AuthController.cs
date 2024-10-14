@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -22,13 +23,31 @@ namespace DentistSystem.Controllers
         public IActionResult Login([FromBody] LoginModel model)
         {
             // Very basic authentication logic
-            if (model.Username == "admin" && model.Password == "password")
+            if (ValidateUser(model.Username, model.Password))
             {
                 var token = GenerateJwtToken(model.Username);
                 return Ok(new { Token = token });
             }
 
             return Unauthorized("Invalid credentials");
+        }
+
+        private bool ValidateUser(string username, string password)
+        {
+            string query = @"SELECT COUNT(1) FROM dbo.patient WHERE email = @Email AND password = @Password";
+            string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
+            using (SqlConnection con = new SqlConnection(sqlDatasource))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Email", username);
+                    cmd.Parameters.AddWithValue("@Password", password);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count == 1;
+                }
+            }
         }
 
         private string GenerateJwtToken(string username)
@@ -51,7 +70,7 @@ namespace DentistSystem.Controllers
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30), // Token expires after 30 minutes
+                expires: DateTime.Now.AddMinutes(60), // Token expires after 60 minutes
                 signingCredentials: creds);
 
             // Return the token as a string
