@@ -56,15 +56,18 @@
                 }
                 // Navigate to the homepage or some protected page
                 Navigation.NavigateTo("/");
+                Console.WriteLine("Navigated away from login page.");
             }
             else
             {
                 errorMessage = "Invalid credentials. Please try again.";
+                Console.WriteLine("Invalid credentials. Please try again.");
             }
         }
         catch (Exception ex)
         {
             errorMessage = $"Error: {ex.Message}";
+            Console.WriteLine($"Error: {ex.Message}");
         }
     }
 
@@ -79,4 +82,3 @@
         public string Token { get; set; }
     }
 }
-

@@ -78,6 +78,52 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DentistSystem.Controllers.PatientController",
+    "Method": "RegisterPatient",
+    "RelativePath": "api/Patient/RegisterPatient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Dob",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PatientAddress",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DentistSystem.Controllers.ReceptionistController",
     "Method": "GetReceptionists",
     "RelativePath": "api/Receptionist/GetReceptionists",
