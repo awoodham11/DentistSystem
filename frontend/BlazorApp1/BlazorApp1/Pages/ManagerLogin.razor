@@ -1,9 +1,11 @@
-﻿@page "/login"
+﻿@page "/managerlogin"
 
 @inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h2>Manager Login Page</h2>
 
 <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
     <DataAnnotationsValidator />
@@ -36,7 +38,7 @@
         try
         {
             // Make a POST request to your API to get the JWT token
-            var response = await Http.PostAsJsonAsync("https://localhost:5070/api/auth/login", loginModel);
+            var response = await Http.PostAsJsonAsync("https://localhost:5070/api/auth/managerlogin", loginModel);
 
             if (response.IsSuccessStatusCode)
             {
@@ -55,15 +57,12 @@
                     errorMessage = "Error: Authentication provider is not the expected type.";
                 }
                 // Navigate to the homepage or some protected page
-                Navigation.NavigateTo("/patientpage");
+                Navigation.NavigateTo("/managerpage");
                 Console.WriteLine("Navigated away from login page.");
 
-                //for when resticted access is needed
-                // if(logged in user is a dentist){
-                //  Navigation.NavigateTo("/dentist");
-                // }
-             
-                
+
+
+
             }
             else
             {
@@ -89,3 +88,4 @@
         public string Token { get; set; }
     }
 }
+

@@ -1,8 +1,56 @@
 [
   {
     "ContainingType": "DentistSystem.Controllers.AuthController",
+    "Method": "DentistLogin",
+    "RelativePath": "api/Auth/dentistlogin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DentistSystem.Controllers.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DentistSystem.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DentistSystem.Controllers.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DentistSystem.Controllers.AuthController",
+    "Method": "ManagerLogin",
+    "RelativePath": "api/Auth/managerlogin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "DentistSystem.Controllers.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DentistSystem.Controllers.AuthController",
+    "Method": "ReceptionistLogin",
+    "RelativePath": "api/Auth/receptionistlogin",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

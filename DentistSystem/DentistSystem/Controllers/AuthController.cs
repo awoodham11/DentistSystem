@@ -22,7 +22,7 @@ namespace DentistSystem.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel model)
         {
-            // Very basic authentication logic
+
             if (ValidateUser(model.Username, model.Password))
             {
                 var token = GenerateJwtToken(model.Username);
@@ -32,7 +32,46 @@ namespace DentistSystem.Controllers
             return Unauthorized("Invalid credentials");
         }
 
-        private bool ValidateUser(string username, string password)
+        [HttpPost("dentistlogin")]
+        public IActionResult DentistLogin([FromBody] LoginModel model)
+        {
+			
+			if (ValidateDentistLogin(model.Username, model.Password))
+			{
+				var token = GenerateJwtToken(model.Username);
+				return Ok(new { Token = token });
+			}
+
+			return Unauthorized("Invalid credentials");
+		}
+
+		[HttpPost("managerlogin")]
+		public IActionResult ManagerLogin([FromBody] LoginModel model)
+		{
+			
+			if (ValidateManagerLogin(model.Username, model.Password))
+			{
+				var token = GenerateJwtToken(model.Username);
+				return Ok(new { Token = token });
+			}
+
+			return Unauthorized("Invalid credentials");
+		}
+
+		[HttpPost("receptionistlogin")]
+		public IActionResult ReceptionistLogin([FromBody] LoginModel model)
+		{
+			
+			if (ValidateReceptionistLogin(model.Username, model.Password))
+			{
+				var token = GenerateJwtToken(model.Username);
+				return Ok(new { Token = token });
+			}
+
+			return Unauthorized("Invalid credentials");
+		}
+
+		private bool ValidateUser(string username, string password)
         {
             string query = @"SELECT COUNT(1) FROM dbo.patient WHERE email = @Email AND password = @Password";
             string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
@@ -50,7 +89,63 @@ namespace DentistSystem.Controllers
             }
         }
 
-        private string GenerateJwtToken(string username)
+		private bool ValidateDentistLogin(string username, string password)
+		{
+			string query = @"SELECT COUNT(1) FROM dbo.dentist WHERE email = @Email AND password = @Password";
+			string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
+			using (SqlConnection con = new SqlConnection(sqlDatasource))
+			{
+				con.Open();
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@Email", username);
+					cmd.Parameters.AddWithValue("@Password", password);
+
+					int count = Convert.ToInt32(cmd.ExecuteScalar());
+					return count == 1;
+				}
+			}
+		}
+
+		private bool ValidateManagerLogin(string username, string password)
+		{
+			string query = @"SELECT COUNT(1) FROM dbo.practicemanager WHERE email = @Email AND password = @Password";
+			string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
+			using (SqlConnection con = new SqlConnection(sqlDatasource))
+			{
+				con.Open();
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@Email", username);
+					cmd.Parameters.AddWithValue("@Password", password);
+
+					int count = Convert.ToInt32(cmd.ExecuteScalar());
+					return count == 1;
+				}
+			}
+		}
+
+		private bool ValidateReceptionistLogin(string username, string password)
+		{
+			string query = @"SELECT COUNT(1) FROM dbo.receptionist WHERE email = @Email AND password = @Password";
+			string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
+			using (SqlConnection con = new SqlConnection(sqlDatasource))
+			{
+				con.Open();
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@Email", username);
+					cmd.Parameters.AddWithValue("@Password", password);
+
+					int count = Convert.ToInt32(cmd.ExecuteScalar());
+					return count == 1;
+				}
+			}
+		}
+
+
+
+		private string GenerateJwtToken(string username)
         {
             // Create the claims for the token (you can add more claims if needed)
             var claims = new[]

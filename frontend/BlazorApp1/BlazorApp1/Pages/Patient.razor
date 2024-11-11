@@ -6,7 +6,7 @@
 @foreach (var patient in patient)
 {
 	<p>
-		<b>*@patient.name</b>
+		<b>@patient.first_name @patient.last_name</b>
 	</p>
 }
 
@@ -15,7 +15,8 @@
 	public class Patients
 	{
 		public int id { get; set; }
-		public string? name { get; set; }
+		public string? first_name { get; set; }
+		public string? last_name { get; set; }
 	}
 
 	string API_URL = "https://localhost:5070/";

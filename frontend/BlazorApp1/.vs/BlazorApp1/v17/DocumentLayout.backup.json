@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\identity\\services\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\identity\\services\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\patientpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\patientpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\dentistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\dentistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\registerpatient.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\registerpatient.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\managerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\managerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\models\\patientmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\models\\patientmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\receptionistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\receptionistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\dentistlogin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\dentistlogin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\receptionistlogin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|solutionrelative:blazorapp1\\pages\\receptionistlogin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9D6ACE6-B9CA-43EF-8276-E37F2FCB71AA}|BlazorApp1\\BlazorApp1.csproj|c:\\users\\alexw\\dentistsystem\\frontend\\blazorapp1\\blazorapp1\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,64 +43,93 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CustomAuthenticationStateProvider.cs",
-              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Identity\\Services\\CustomAuthenticationStateProvider.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Identity\\Services\\CustomAuthenticationStateProvider.cs",
-              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Identity\\Services\\CustomAuthenticationStateProvider.cs",
-              "RelativeToolTip": "BlazorApp1\\Identity\\Services\\CustomAuthenticationStateProvider.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T20:20:53.25Z",
+              "Title": "PatientPage.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\PatientPage.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\PatientPage.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\PatientPage.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\PatientPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T19:44:35.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DentistPage.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\DentistPage.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\DentistPage.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\DentistPage.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\DentistPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T19:44:23.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManagerPage.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\ManagerPage.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\ManagerPage.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\ManagerPage.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\ManagerPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T19:43:44.044Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PatientModel.cs",
-              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Models\\PatientModel.cs",
-              "RelativeDocumentMoniker": "BlazorApp1\\Models\\PatientModel.cs",
-              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Models\\PatientModel.cs",
-              "RelativeToolTip": "BlazorApp1\\Models\\PatientModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T19:34:50.611Z"
+              "Title": "ReceptionistPage.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\ReceptionistPage.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\ReceptionistPage.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\ReceptionistPage.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\ReceptionistPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T19:43:29.03Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterPatient.razor",
-              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\RegisterPatient.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\RegisterPatient.razor",
-              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\RegisterPatient.razor",
-              "RelativeToolTip": "BlazorApp1\\Pages\\RegisterPatient.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ReceptionistLogin.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\ReceptionistLogin.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\ReceptionistLogin.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\ReceptionistLogin.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\ReceptionistLogin.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-14T19:29:17.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.razor",
-              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\Login.razor",
-              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\Login.razor",
-              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\Login.razor",
-              "RelativeToolTip": "BlazorApp1\\Pages\\Login.razor",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-14T16:58:35.687Z",
+              "WhenOpened": "2024-11-11T19:43:12.507Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "DentistLogin.razor",
+              "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\DentistLogin.razor",
+              "RelativeDocumentMoniker": "BlazorApp1\\Pages\\DentistLogin.razor",
+              "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\DentistLogin.razor",
+              "RelativeToolTip": "BlazorApp1\\Pages\\DentistLogin.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T19:42:48.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Index.razor",
               "DocumentMoniker": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\Index.razor",
               "RelativeDocumentMoniker": "BlazorApp1\\Pages\\Index.razor",
               "ToolTip": "C:\\Users\\alexw\\DentistSystem\\frontend\\BlazorApp1\\BlazorApp1\\Pages\\Index.razor",
               "RelativeToolTip": "BlazorApp1\\Pages\\Index.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-13T19:08:30.132Z"
+              "WhenOpened": "2024-10-13T19:08:30.132Z",
+              "EditorCaption": ""
             }
           ]
         }
