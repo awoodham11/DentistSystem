@@ -1,4 +1,5 @@
-﻿@page "/receptionistpage"
+﻿@attribute [Authorize(Roles = "Receptionist")]
+@page "/receptionistpage"
 
 <h3>Receptionist Page</h3>
 

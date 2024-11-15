@@ -50,7 +50,7 @@
                 if (AuthenticationStateProvider is CustomAuthenticationStateProvider customAuthStateProvider)
                 {
                     // Notify the authentication state provider that the user has logged in
-                    customAuthStateProvider.MarkUserAsAuthenticated(result.Token);
+                    await customAuthStateProvider.MarkUserAsAuthenticated(result.Token);
                 }
                 else
                 {

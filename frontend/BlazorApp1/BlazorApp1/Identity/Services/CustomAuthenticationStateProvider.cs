@@ -1,15 +1,16 @@
 ﻿using BlazorApp1.Identity.Services;
-using Intersoft.Crosslight.Mobile;
-using Microsoft.AspNetCore.Components.Authorization;
-using System.Security.Claims;
 using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
+using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Threading.Tasks;
-using ILocalStorageService = Blazored.LocalStorage.ILocalStorageService;
 
 public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 {
     private readonly ILocalStorageService _localStorage;
     private readonly HttpClient _httpClient;
+
+    private bool _isPrerenderingComplete;
 
     public CustomAuthenticationStateProvider(ILocalStorageService localStorage, HttpClient httpClient)
     {
@@ -19,41 +20,62 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
 
     public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
-        var token = await _localStorage.GetItemAsync<string>("authToken");
-        if (string.IsNullOrWhiteSpace(token))
+        // Wait until prerendering is complete to access LocalStorage
+        if (!_isPrerenderingComplete)
         {
-            // No token means the user is not authenticated
+            // Return an unauthenticated user during prerendering
             return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
         }
 
-        // If token exists, create a ClaimsPrincipal with the appropriate claims
+        var token = await _localStorage.GetItemAsync<string>("authToken");
+
+        if (string.IsNullOrWhiteSpace(token))
+        {
+            return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
+        }
+
+        // Parse claims from the token
         var claims = JwtParser.ParseClaimsFromJwt(token);
+        foreach (var claim in claims)
+        {
+            Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
+        }
+
         var identity = new ClaimsIdentity(claims, "jwtAuth");
         var user = new ClaimsPrincipal(identity);
 
-        // Set the default authorization header for future API calls
-        _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+        // Set the authorization header for future API requests
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
         return new AuthenticationState(user);
     }
 
-    public void MarkUserAsAuthenticated(string token)
+    public async Task MarkUserAsAuthenticated(string token)
     {
+        // Store the token in LocalStorage
+        await _localStorage.SetItemAsync("authToken", token);
+
+        // Parse claims from the token
         var claims = JwtParser.ParseClaimsFromJwt(token);
         var identity = new ClaimsIdentity(claims, "jwtAuth");
         var user = new ClaimsPrincipal(identity);
 
-        // Notify Blazor that the authentication state has changed
         NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
     }
 
-    public void MarkUserAsLoggedOut()
+    public async Task MarkUserAsLoggedOut()
     {
-        // Clear the authorization header
-        //_httpClient.DefaultRequestHeaders.Authorization = null;
+        await _localStorage.RemoveItemAsync("authToken");
+        _httpClient.DefaultRequestHeaders.Authorization = null;
 
         var anonymous = new ClaimsPrincipal(new ClaimsIdentity());
         NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(anonymous)));
     }
-}
 
+    public Task CompletePrerenderingAsync()
+    {
+        _isPrerenderingComplete = true;
+        NotifyAuthenticationStateChanged(GetAuthenticationStateAsync());
+        return Task.CompletedTask;
+    }
+}

@@ -1,4 +1,5 @@
-﻿@page "/managerpage"
+﻿@attribute [Authorize(Roles = "Manager")]
+@page "/managerpage"
 
 <h3>Manager Page</h3>
 

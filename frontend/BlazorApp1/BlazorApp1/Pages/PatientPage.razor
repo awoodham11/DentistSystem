@@ -1,4 +1,5 @@
-﻿@page "/patientpage"
+﻿@attribute [Authorize(Roles = "Patient")]
+@page "/patientpage"
 
 <h3>Welcome to the Patient Page</h3>
 

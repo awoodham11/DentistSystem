@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -25,7 +24,7 @@ namespace DentistSystem.Controllers
 
             if (ValidateUser(model.Username, model.Password))
             {
-                var token = GenerateJwtToken(model.Username);
+                var token = GenerateJwtToken(model.Username, "Patient");
                 return Ok(new { Token = token });
             }
 
@@ -38,7 +37,7 @@ namespace DentistSystem.Controllers
 			
 			if (ValidateDentistLogin(model.Username, model.Password))
 			{
-				var token = GenerateJwtToken(model.Username);
+				var token = GenerateJwtToken(model.Username, "Dentist");
 				return Ok(new { Token = token });
 			}
 
@@ -51,7 +50,7 @@ namespace DentistSystem.Controllers
 			
 			if (ValidateManagerLogin(model.Username, model.Password))
 			{
-				var token = GenerateJwtToken(model.Username);
+				var token = GenerateJwtToken(model.Username, "Manager");
 				return Ok(new { Token = token });
 			}
 
@@ -64,7 +63,7 @@ namespace DentistSystem.Controllers
 			
 			if (ValidateReceptionistLogin(model.Username, model.Password))
 			{
-				var token = GenerateJwtToken(model.Username);
+				var token = GenerateJwtToken(model.Username, "Receptionist");
 				return Ok(new { Token = token });
 			}
 
@@ -145,14 +144,15 @@ namespace DentistSystem.Controllers
 
 
 
-		private string GenerateJwtToken(string username)
+		private string GenerateJwtToken(string username, string role)
         {
             // Create the claims for the token (you can add more claims if needed)
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, username),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+				new Claim(JwtRegisteredClaimNames.Sub, username),
+				new Claim(ClaimTypes.Role, role),
+				new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+			};
 
             // Get the secret key from appsettings
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

@@ -15,66 +15,70 @@
             </NavLink>
         </div>
 
-        
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="dentistapp">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Display List of Dentists
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="patients">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Display List of Patients
-            </NavLink>
-        </div>
+        <AuthorizeView Roles="Dentist,Manager">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="dentistapp">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Display List of Dentists
+                </NavLink>
+            </div>
+        </AuthorizeView>
 
+        <AuthorizeView Roles="Receptionist,Manager">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="patients">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Display List of Patients
+                </NavLink>
+            </div>
+        </AuthorizeView>
 
+        <AuthorizeView Roles="Dentist">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="dentistpage">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Dentist Page
+                </NavLink>
+            </div>
+        </AuthorizeView>
 
+        <AuthorizeView Roles="Patient">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="patientpage">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Patient Page
+                </NavLink>
+            </div>
+        </AuthorizeView>
 
+        <AuthorizeView Roles="Manager">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="managerpage">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Practice Manager Page
+                </NavLink>
+            </div>
+        </AuthorizeView>
 
+        <AuthorizeView Roles="Receptionist">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="receptionistpage">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Receptionist Page
+                </NavLink>
+            </div>
+        </AuthorizeView>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="dentist">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Dentist Page
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="patient">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Patient Page
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="practicemanager">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Practice Manager Page
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="receptionist">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Receptionist Page
-            </NavLink>
-        </div>
-        @* <div class="nav-item px-3">
-            <AuthorizeView>
-                <Authorized>
-                    <NavLink class="nav-link" href="" @onclick="Logout">
-                        <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
-                    </NavLink>
-                </Authorized>
-                <NotAuthorized>
-                    <NavLink class="nav-link" href="" @onclick="Login">
-                        <span class="oi oi-account-login" aria-hidden="true"></span> Login
-                    </NavLink>
-                </NotAuthorized>
-            </AuthorizeView>
-        </div>
         <AuthorizeView>
             <Authorized>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="blogposts">
-                        <span class="oi oi-signpost" aria-hidden="true"></span> Manage Posts
+                    <NavLink class="nav-link" href="logout">
+                        <span class="oi oi-account-logout" aria-hidden="true"></span> Logout
                     </NavLink>
                 </div>
             </Authorized>
-        </AuthorizeView> *@
+            <NotAuthorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="login">
+                        <span class="oi oi-account-login" aria-hidden="true"></span> Login
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>
     </nav>
 </div>
 
