@@ -150,9 +150,11 @@ namespace DentistSystem.Controllers
             var claims = new[]
             {
 				new Claim(JwtRegisteredClaimNames.Sub, username),
-				new Claim(ClaimTypes.Role, role),
+				new Claim("role", role),
 				new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
 			};
+
+            Console.WriteLine($"Generated role claim: {claims.FirstOrDefault(c => c.Type == "role")?.Value}");
 
             // Get the secret key from appsettings
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

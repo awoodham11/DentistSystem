@@ -20,13 +20,14 @@ namespace BlazorApp1.Identity.Services
                 // Handle role claims specifically
                 if (claim.Type == "role" || claim.Type == ClaimTypes.Role)
                 {
+                    claims.Add(new Claim(ClaimTypes.Role, claim.Value));
+
                     // Check if the role claim is a JSON array
                     if (claim.Value.StartsWith("[") && claim.Value.EndsWith("]"))
                     {
                         // Parse the JSON array and add each role as a separate claim
                         var roles = JArray.Parse(claim.Value).Values<string>();
                         claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
-                        Console.WriteLine(ClaimTypes.Role);
                     }
                     else
                     {
