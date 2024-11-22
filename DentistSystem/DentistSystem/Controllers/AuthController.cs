@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
@@ -173,6 +174,15 @@ namespace DentistSystem.Controllers
             // Return the token as a string
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+        [HttpGet("claims")]
+        [Authorize] // This ensures the user is authenticated before accessing this endpoint
+        public IActionResult GetClaims()
+        {
+            var claims = User.Claims.Select(c => new { Type = c.Type, Value = c.Value }).ToList();
+            return Ok(claims);
+        }
+
     }
 
     public class LoginModel
