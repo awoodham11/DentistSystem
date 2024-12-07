@@ -1,0 +1,88 @@
+@page "/create-appointment"
+@inject HttpClient Http
+
+<h3>Create Appointment</h3>
+
+<EditForm Model="newAppointment" OnValidSubmit="SubmitAppointment">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Patient ID:</label>
+        <InputNumber @bind-Value="newAppointment.PatientId" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Dentist ID:</label>
+        <InputNumber @bind-Value="newAppointment.DentistId" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Appointment Date:</label>
+        <InputDate @bind-Value="AppointmentDate" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Appointment Time:</label>
+        <InputText @bind-Value="AppointmentTimeString" class="form-control" placeholder="HH:mm (e.g., 14:30)" />
+    </div>
+    <button class="btn btn-primary" type="submit">Create Appointment</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p class="@messageClass">@message</p>
+}
+
+@code {
+    private Appointment newAppointment = new Appointment();
+    private DateTime AppointmentDate = DateTime.Now.Date; // Default to today's date
+    private string AppointmentTimeString; // To store time in HH:mm format
+    private string message;
+    private string messageClass;
+
+    private async Task SubmitAppointment()
+    {
+        try
+        {
+            // Parse the time string into TimeSpan
+            if (TimeSpan.TryParse(AppointmentTimeString, out var time))
+            {
+                // Combine date and time into AppointmentTime
+                newAppointment.AppointmentTime = AppointmentDate.Date.Add(time);
+
+                var response = await Http.PostAsJsonAsync("api/Appointment", newAppointment);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    message = "Appointment created successfully!";
+                    messageClass = "text-success";
+                    // Clear the form
+                    newAppointment = new Appointment();
+                    AppointmentDate = DateTime.Now.Date;
+                    AppointmentTimeString = string.Empty;
+                }
+                else
+                {
+                    var error = await response.Content.ReadAsStringAsync();
+                    message = $"Error: {error}";
+                    messageClass = "text-danger";
+                }
+            }
+            else
+            {
+                message = "Invalid time format. Please use HH:mm (e.g., 14:30).";
+                messageClass = "text-danger";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+            messageClass = "text-danger";
+        }
+    }
+
+    public class Appointment
+    {
+        public int? PatientId { get; set; }
+        public int? DentistId { get; set; }
+        public DateTime AppointmentTime { get; set; }
+    }
+}

@@ -21,14 +21,18 @@ builder.Services.AddBlazoredLocalStorage();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
-    });
+	options.AddPolicy("AllowAll", builder =>
+	{
+		builder.AllowAnyOrigin()
+			   .AllowAnyMethod()
+			   .AllowAnyHeader();
+	});
 });
 
+builder.Services.AddScoped(sp => new HttpClient
+{
+	BaseAddress = new Uri("https://localhost:5070/")
+});
 
 
 
@@ -63,7 +67,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
+	app.UseExceptionHandler("/Error");
 }
 
 app.UseHttpsRedirection();
