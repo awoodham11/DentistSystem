@@ -1,0 +1,60 @@
+@page "/delete-appointment"
+@inject HttpClient Http
+
+<h3>Delete Appointment</h3>
+
+<div class="mb-3">
+    <label>Appointment ID:</label>
+    <InputNumber @bind-Value="appointmentId" class="form-control" />
+</div>
+
+<button class="btn btn-danger" @onclick="DeleteAppointment">Delete Appointment</button>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p class="@messageClass">@message</p>
+}
+
+@code {
+    private int? appointmentId;
+    private string? message;
+    private string messageClass;
+
+    private async Task DeleteAppointment()
+    {
+        if (appointmentId == null || appointmentId <= 0)
+        {
+            message = "Please enter a valid Appointment ID.";
+            messageClass = "text-danger";
+            return;
+        }
+
+        try
+        {
+            var response = await Http.DeleteAsync($"api/Appointment/{appointmentId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = $"Appointment with ID {appointmentId} deleted successfully.";
+                messageClass = "text-success";
+                appointmentId = null;
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                message = $"Appointment with ID {appointmentId} not found.";
+                messageClass = "text-warning";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                message = $"Error: {error}";
+                messageClass = "text-danger";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+            messageClass = "text-danger";
+        }
+    }
+}

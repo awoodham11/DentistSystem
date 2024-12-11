@@ -1,0 +1,91 @@
+@page "/view-all-appointments"
+@inject HttpClient Http
+
+<h3>All Appointments</h3>
+
+@if (loading)
+{
+    <p>Loading...</p>
+}
+else if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p class="text-danger">@errorMessage</p>
+}
+else if (appointments != null && appointments.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Appointment ID</th>
+                <th>Patient ID</th>
+                <th>Dentist ID</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in appointments)
+            {
+                <tr>
+                    <td>@appointment.AppointmentId</td>
+                    <td>@appointment.PatientId</td>
+                    <td>@appointment.DentistId</td>
+                    <td>@appointment.AppointmentTime.ToString("yyyy-MM-dd")</td>
+                    <td>@appointment.AppointmentTime.ToString("HH:mm")</td>
+                    <td>@appointment.Notes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No appointments found.</p>
+}
+
+@code {
+    private List<Appointment> appointments = new();
+    private bool loading = true;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAppointments();
+    }
+
+    private async Task LoadAppointments()
+    {
+        try
+        {
+            loading = true;
+            var response = await Http.GetAsync("api/Appointment/GetAllAppointments");
+
+            if (response.IsSuccessStatusCode)
+            {
+                appointments = await response.Content.ReadFromJsonAsync<List<Appointment>>() ?? new List<Appointment>();
+            }
+            else
+            {
+                errorMessage = $"Error: {response.StatusCode}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error: {ex.Message}";
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    public class Appointment
+    {
+        public int AppointmentId { get; set; }
+        public int PatientId { get; set; }
+        public int DentistId { get; set; }
+        public DateTime AppointmentTime { get; set; }
+        public string? Notes { get; set; }
+    }
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HY+PnAKnwL0=",
+  "dgSpecHash": "/feTQI/DuTo=",
   "success": true,
-  "projectFilePath": "c:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj",
+  "projectFilePath": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\alexw\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.8\\microsoft.aspnetcore.jsonpatch.8.0.8.nupkg.sha512",

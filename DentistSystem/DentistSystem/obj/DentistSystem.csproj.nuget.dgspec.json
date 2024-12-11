@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj": {}
+    "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj": {}
   },
   "projects": {
-    "c:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj": {
+    "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj",
+        "projectUniqueName": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj",
         "projectName": "DentistSystem",
-        "projectPath": "c:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj",
+        "projectPath": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\DentistSystem.csproj",
         "packagesPath": "C:\\Users\\alexw\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\obj\\",
+        "outputPath": "C:\\Users\\alexw\\DentistSystem\\DentistSystem\\DentistSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

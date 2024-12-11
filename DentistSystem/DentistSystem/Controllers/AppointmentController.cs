@@ -77,6 +77,121 @@ namespace DentistSystem.Controllers
 			}
 		}
 
+		[HttpGet("{appointmentId}")]
+		public IActionResult GetAppointment(int appointmentId)
+		{
+			string query = @"
+        SELECT * 
+        FROM dbo.appointment
+        WHERE appointment_id = @AppointmentId;
+    	";
+
+			DataTable table = new DataTable();
+			string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
+
+			try
+			{
+				using (SqlConnection connection = new SqlConnection(sqlDatasource))
+				{
+					connection.Open();
+					using (SqlCommand command = new SqlCommand(query, connection))
+					{
+						command.Parameters.AddWithValue("@AppointmentId", appointmentId);
+
+						SqlDataReader myReader = command.ExecuteReader();
+						table.Load(myReader);
+						myReader.Close();
+					}
+				}
+
+				if (table.Rows.Count == 0)
+				{
+					return NotFound($"Appointment with ID {appointmentId} not found.");
+				}
+
+				return new JsonResult(table);
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, $"Internal server error: {ex.Message}");
+			}
+		}
+
+		[HttpGet]
+		[Route("GetAllAppointments")]
+		public IActionResult GetAllAppointments()
+		{
+			string query = @"
+        SELECT * 
+        FROM dbo.appointment
+        ORDER BY appointment_time ASC;
+    	";
+
+			DataTable table = new DataTable();
+			string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
+
+			try
+			{
+				using (SqlConnection connection = new SqlConnection(sqlDatasource))
+				{
+					connection.Open();
+					using (SqlCommand command = new SqlCommand(query, connection))
+					{
+						SqlDataReader myReader = command.ExecuteReader();
+						table.Load(myReader);
+						myReader.Close();
+					}
+				}
+
+				return new JsonResult(table);
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, $"Internal server error: {ex.Message}");
+			}
+		}
+
+		[HttpDelete("{appointmentId}")]
+		public IActionResult DeleteAppointment(int appointmentId)
+		{
+			string query = @"
+        DELETE FROM dbo.appointment
+        WHERE appointment_id = @AppointmentId;
+    	";
+
+			string sqlDatasource = _configuration.GetConnectionString("dentistappDBCon");
+
+			try
+			{
+				using (SqlConnection connection = new SqlConnection(sqlDatasource))
+				{
+					connection.Open();
+					using (SqlCommand command = new SqlCommand(query, connection))
+					{
+						command.Parameters.AddWithValue("@AppointmentId", appointmentId);
+
+						int rowsAffected = command.ExecuteNonQuery();
+
+						if (rowsAffected > 0)
+						{
+							return Ok($"Appointment with ID {appointmentId} deleted successfully.");
+						}
+						else
+						{
+							return NotFound($"Appointment with ID {appointmentId} not found.");
+						}
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, $"Internal server error: {ex.Message}");
+			}
+		}
+
+
+
+
 
 
 

@@ -1,0 +1,83 @@
+@page "/view-appointment/{AppointmentId:int}"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<h3>View Appointment</h3>
+
+@if (loading)
+{
+        <p>Loading...</p>
+}
+else if (!string.IsNullOrEmpty(errorMessage))
+{
+        <p class="text-danger">@errorMessage</p>
+}
+else if (appointment != null)
+{
+        <div>
+            <p><strong>Appointment ID:</strong> @appointment.AppointmentId</p>
+            <p><strong>Patient ID:</strong> @appointment.PatientId</p>
+            <p><strong>Dentist ID:</strong> @appointment.DentistId</p>
+            <p><strong>Appointment Date:</strong> @appointment.AppointmentTime.ToString("yyyy-MM-dd")</p>
+            <p><strong>Appointment Time:</strong> @appointment.AppointmentTime.ToString("HH:mm")</p>
+            <p><strong>Notes:</strong> @appointment.Notes</p>
+        </div>
+        <button class="btn btn-secondary" @onclick="GoBack">Back</button>
+}
+
+@code {
+    [Parameter] public int AppointmentId { get; set; }
+
+    private Appointment? appointment;
+    private bool loading = true;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAppointment();
+    }
+
+    private async Task LoadAppointment()
+    {
+        try
+        {
+            loading = true;
+            var response = await Http.GetAsync($"api/Appointment/{AppointmentId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                appointment = await response.Content.ReadFromJsonAsync<Appointment>();
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                errorMessage = $"Appointment with ID {AppointmentId} not found.";
+            }
+            else
+            {
+                errorMessage = $"Error: {response.StatusCode}";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error: {ex.Message}";
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private void GoBack()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+    public class Appointment
+    {
+        public int AppointmentId { get; set; }
+        public int PatientId { get; set; }
+        public int DentistId { get; set; }
+        public DateTime AppointmentTime { get; set; }
+        public string? Notes { get; set; }
+    }
+}
